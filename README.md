@@ -1,5 +1,8 @@
 # AWS Client VPN from Oregon to Tokyo by Terraform
 
+
+## Summary
+
 * create VPC, subnet in tokyo and oregon
 * create VPC peering between tokyo and oregon
 * create client VPN endpoint in oregon
@@ -57,19 +60,20 @@ cp pki/issued/client1.crt ./client_folder
 cp pki/private/client1.key ./client_folder
 ```
 
-* download client VPN config to client_folder
+* click `Download Client Configuration` and save it to `client_folder`
 * append two lines to the `downloaded-client-config.ovpn`
 ```
 cert client1.crt
 key client1.key
 ```
 
-* drag and drop the config to Tunnelblick and Connect
+* drag and drop the config to Tunnelblick and Connect (see References)
+
 
 ## Result
 
-* you should be able to ssh to `peer_private_ip` in the output
 * you should be able to ssh to `main_private_ip` in the output
+* you should be able to ssh to `peer_private_ip` in the output
 * from there, you should be able to ssh to `main_private_ip`
 
 
